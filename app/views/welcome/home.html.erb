@@ -1,0 +1,26 @@
+
+<h1>Hi, <%= @user.name %></h1>
+
+<%= link_to 'Choose a Story', templates_path  %>
+
+
+<!--TEMPLATES#INDEX: Link to Choose a story category  -->
+<!--TEMPLATES#NEW: Link to create your own story  -->
+<!--USERS#COMPLETED_STORIES: Link to see all of a users completed stories  -->
+
+<!--USERS#SHOW: Link to account page -->
+<!--Link to read completed stories by user  -->
+
+<!--
+/users/7/completed_stories
+get '/users/:id/completed_stories', to: 'users#completed_stories' as: user_completed_story -->
+
+
+
+
+
+
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>

@@ -1,0 +1,2 @@
+module CompletedStoriesHelper
+end

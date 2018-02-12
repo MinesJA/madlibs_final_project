@@ -1,0 +1,4 @@
+<% @templates.each do |each_story|  %>
+  <%= link_to each_story.title, template_path(each_story) %>
+  <%= each_story.category %>
+<% end %>
