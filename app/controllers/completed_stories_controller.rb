@@ -4,16 +4,11 @@ class CompletedStoriesController < ApplicationController
   def new
   end
 
+
   def create
     @template = Template.find_by(id: params[:template_id])
-    @completed_story = CompletedStory.new
-    @words = params[:words]
 
-    byebug
-  
-
-    @template.insert_words(@words)
-    @completed_story.save_insert(@template)
+    @completed_story = CompletedStory.create_story(@template, params[:words], current_user)
 
     redirect_to @completed_story
   end
@@ -21,4 +16,5 @@ class CompletedStoriesController < ApplicationController
   def show
     @completed_story = CompletedStory.find(params[:id])
   end
+
 end

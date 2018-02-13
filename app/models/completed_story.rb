@@ -4,19 +4,20 @@ class CompletedStory < ApplicationRecord
 
 
   def self.insert_words(template_instance, words_array)
-    #method on instance of template
-    completed_story = words.each do |key,value|
+    story = template_instance.story_template
+
+    words_array.each do |key,value|
       key = "##{key}#"
-      template.story_template.sub! key, value
+      story.sub! key, value
     end
-    completed_story
+
+    story
   end
 
-
-  def self.create_completed_story(template_instance, words_array)
+  def self.create_story(template_instance, words_array, current_user)
     finished_story = self.insert_words(template_instance, words_array)
 
-    completed_story_instance = self.create!(user_id: current_user.id, template_id: template_instance.id, finished_story: finished_story)
+    completed_story = self.create(user_id: current_user.id, template_id: template_instance.id, finished_story: finished_story)
   end
 
 end
