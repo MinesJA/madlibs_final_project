@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :templates
   resources :users
 
-
+  get '/categories', to: 'templates#categoryindex', as: 'categories'
+  get '/categories/:category', to: 'templates#categoryshow', as: 'category'
 end

@@ -13,4 +13,15 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def categoryindex
+    @templates = Template.all
+  end
+
+  def categoryshow
+    @templates = Template.all.select do |each_story|
+       each_story.category == params[:category]
+      end
+  end
+
+
 end
