@@ -15,6 +15,6 @@ When police arrived, a neighbor identified as #persons_name_1, spoke to authorit
 Authorities said 84-year-old Betty Frances Sanders and her husband then approached the family at their front yard fence and complained about the children riding motorcycles and being noisy. Moments later an argument broke out and Sanders fired one round from a handgun toward Rollins and her family, who were approximately 20 feet away."
 
 
-template2 = Template.create(title: "Granny Opens Fire", story_template: granny_opens_fire, category: "News Story")
+template2 = Template.create(title: "Granny Opens Fire", story_template: granny_opens_fire, category: "Something Else")
 
 template1 = Template.create(title: "The Stolen Wallet", story_template: wallet_template, category: "News Story")
