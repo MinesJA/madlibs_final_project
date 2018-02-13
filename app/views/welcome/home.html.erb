@@ -1,8 +1,8 @@
 
 <h1>Hi, <%= @user.name %></h1>
 
-<%= link_to 'Play MADLIBS!', categories_path  %><br> <!-- LINKS TO CATEGORY OPTIONS, THEN STORY OPTIONS -->
-<%= link_to 'Create a MADLIBS story.', categories_path  %><br> <!-- TEMPLATES#NEW -->
+<%= link_to 'Play MADLIBS', categories_path  %><br> <!-- LINKS TO CATEGORY OPTIONS, THEN STORY OPTIONS -->
+<%= link_to 'Create a MADLIBS story', new_template_path  %><br> <!-- TEMPLATES#NEW -->
 <%= link_to "Read all user's completed stories", categories_path  %> <br><!-- COMPLETED_STORIES#INDEX -->
 
 

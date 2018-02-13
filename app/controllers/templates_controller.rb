@@ -23,5 +23,19 @@ class TemplatesController < ApplicationController
       end
   end
 
+  def new
+    @template = Template.new
+  end
+
+  def create
+    @template = Template.new
+    @template.user_id = current_user.id
+    @template.title = params[:template][:title]
+    @template.story_template = params[:template][:story_template]
+    @template.category = params[:template][:category]
+    @template.save
+    redirect_to @template
+
+  end
 
 end
