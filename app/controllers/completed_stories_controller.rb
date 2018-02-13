@@ -5,16 +5,16 @@ class CompletedStoriesController < ApplicationController
   end
 
   def create
-    @completed_story = CompletedStory.new
     @template = Template.find_by(id: params[:template_id])
+    @completed_story = CompletedStory.new
     @words = params[:words]
-    @words.each do |key,value|
-      @template.story_template.sub! key, value
-    end
-    @completed_story.user_id = current_user.id
-    @completed_story.template_id = @template.id
-    @completed_story.finished_story = @template.story_template
-    @completed_story.save
+
+    byebug
+  
+
+    @template.insert_words(@words)
+    @completed_story.save_insert(@template)
+
     redirect_to @completed_story
   end
 
