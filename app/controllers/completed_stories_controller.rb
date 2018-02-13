@@ -10,7 +10,13 @@ class CompletedStoriesController < ApplicationController
     @finished_story = CompletedStory.insert_words(@template, params[:words])
 
     @completed_story = CompletedStory.new(user_id: current_user.id, template_id: @template.id, finished_story: @finished_story)
-    @completed_story.save
+
+    if @completed_story.valid?
+      @completed_story.save
+    else
+      render template_path(@template)
+    end
+
     redirect_to @completed_story
   end
 

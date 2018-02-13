@@ -1,25 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MODELS:
 
-Things you may want to cover:
+User
+  has_many :templates, through: :author_templates, source: :author
+  has_many :author_templates, foreign_key: :author_id, class_name: "Template"
 
-* Ruby version
+  has_many :completed_stories, through: :player_stories, source: :player
+  has_many :player_stories, foreign_key: :player_id
 
-* System dependencies
+Template
+  belongs_to :author, foreign_key: "author_id", class_name: "User"
+  has_many :completed_stories
 
-* Configuration
+CompletedStory
+  belongs_to :player, foreign_key: "player_id", class_name: "User"
+  belongs_to :template
 
-* Database creation
 
-* Database initialization
+User table
 
-* How to run the test suite
+Template table
+author_id :integer
+player_id :integer
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# madlibs_final_project
+CompletedStory
+player_id :integer
+template_id :integer
