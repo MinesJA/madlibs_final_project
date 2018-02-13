@@ -6,7 +6,11 @@ class CompletedStoriesController < ApplicationController
 
   def create
     @template = Template.find_by(id: params[:template_id])
-    @completed_story = CompletedStory.create_story(@template, params[:words], current_user)
+
+    @finished_story = CompletedStory.insert_words(@template, params[:words])
+
+    @completed_story = CompletedStory.new(user_id: current_user.id, template_id: @template.id, finished_story: @finished_story)
+    @completed_story.save
 
     redirect_to @completed_story
   end
