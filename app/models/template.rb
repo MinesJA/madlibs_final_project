@@ -1,6 +1,12 @@
 class Template < ApplicationRecord
+  belongs_to :user
   has_many :completed_stories
-  has_many :users, through: :completed_stories
+  
+
+  # belongs_to :author, foreign_key: "author_id", class_name: "User
+  # has_many :completed_stories
+
+
 
 
   def find_key_words
