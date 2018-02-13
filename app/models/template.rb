@@ -1,13 +1,6 @@
 class Template < ApplicationRecord
   belongs_to :user
   has_many :completed_stories
-<<<<<<< HEAD
-  has_many :users, through: :completed_stories
-  # belongs_to :user
-
-=======
->>>>>>> 5b89f35aa0306cb80f045482d1b3b17a724a849c
-
 
   def find_key_words
     hash = {}
