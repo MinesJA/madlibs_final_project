@@ -2,11 +2,6 @@ class CompletedStory < ApplicationRecord
   belongs_to :template
   belongs_to :user
 
-  # belongs_to :player, foreign_key: "player_id", class_name: "User"
-  # belongs_to :template
-
-
-
   def self.insert_words(template_instance, words_array)
     story = template_instance.story_template
 
