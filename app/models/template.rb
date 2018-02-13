@@ -3,9 +3,9 @@ class Template < ApplicationRecord
   has_many :users, through: :completed_stories
 
 
-  def self.find_key_words(story_template)
+  def find_key_words
     hash = {}
-    key_words = story_template.scan(/#(.*?)#/).flatten
+    key_words = self.story_template.scan(/#(.*?)#/).flatten
     #returns array of all key words stripped of "#". ex: "adjective_1"
 
     key_words.each do |key|

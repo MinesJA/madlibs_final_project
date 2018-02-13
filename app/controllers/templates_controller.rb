@@ -7,7 +7,7 @@ class TemplatesController < ApplicationController
 
   def show
     @template = Template.find_by(id: params[:id])
-    @hash = Template.find_key_words(@template.story_template)
+    @hash = @template.find_key_words
   end
 
 end
