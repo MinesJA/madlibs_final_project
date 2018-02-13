@@ -1,9 +1,12 @@
 
-<%= form_tag  '/completed_stories' do %>
+<%= form_tag '/completed_stories' do %>
+
   <% @hash.each do |key,value| %>
-    <%= label_tag key[1..-1].upcase %><br>
-    <%= text_field_tag :"words[#{key}]"%><br>
+    <%= label_tag :"#{key}:" %><br>
+
+    <%= text_field_tag :"words[#{key}]" %><br>
     <% end %>
+
     <%= hidden_field_tag(:template_id, @template.id) %>
     <%= submit_tag "Create Story" %>
 
