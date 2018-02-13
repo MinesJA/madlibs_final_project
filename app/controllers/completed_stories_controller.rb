@@ -1,5 +1,5 @@
 class CompletedStoriesController < ApplicationController
-
+  before_action :require_logged_in
 
   def new
   end
@@ -11,7 +11,6 @@ class CompletedStoriesController < ApplicationController
 
     @completed_story = CompletedStory.new(user_id: current_user.id, template_id: @template.id, finished_story: @finished_story)
     @completed_story.save
-
     redirect_to @completed_story
   end
 
