@@ -1,0 +1,5 @@
+<h1>Choose a Story</h1>
+
+<% @templates.each do |each_story| %>
+  <%= link_to each_story.title, template_path(each_story) %>
+  <% end %>
