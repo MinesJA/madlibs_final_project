@@ -2,7 +2,6 @@ class CompletedStory < ApplicationRecord
   belongs_to :template
   belongs_to :user
 
-
   def self.insert_words(template_instance, words_array)
     story = template_instance.story_template
 

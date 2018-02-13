@@ -1,6 +1,6 @@
 class Template < ApplicationRecord
+  belongs_to :user
   has_many :completed_stories
-  has_many :users, through: :completed_stories
 
 
   def find_key_words
