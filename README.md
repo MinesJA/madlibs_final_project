@@ -1,5 +1,13 @@
 # README
 
+
+<!--
+<% @templates.each do |each_story|  %>
+  <%= link_to each_story.category, category_path(each_story.category) %> <br>
+<% end %> -->
+
+
+
 MODELS:
 
 User

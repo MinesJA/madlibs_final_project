@@ -1,0 +1,7 @@
+
+<h2>All Submitted Stories</h2>
+
+<% @completed_stories.each do |completed_story| %>
+  <%= link_to completed_story.template.title, completed_story_path(completed_story) %>
+  <%= completed_story.template.category %>
+<% end %>

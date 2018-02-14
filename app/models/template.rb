@@ -13,6 +13,15 @@ class Template < ApplicationRecord
     hash
   end
 
+  def self.categories
+    categories = []
+
+    Template.all.each do |template|
+      categories << template.category
+    end
+    categories.uniq
+  end
+
 
 
 end

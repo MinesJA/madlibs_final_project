@@ -1,0 +1,23 @@
+
+<h2>USER</h2>
+
+<p>Admin or not?</p>
+
+<%= @user.name %>
+
+<p>Number of submissions</p>
+
+
+<h4>Created Templates</h4>
+<% @user.templates do |template| %>
+
+  <%= link_to template.title, templates_path(template)  %>
+  <%= template.category %>
+
+<% end %>
+
+<h4>Submitted Stories</h4>
+<% @user.completed_stories do |completed_story| %>
+  <%= link_to completed_story.template.title, completed_story(completed_story) %>
+  <%= completed_story.template.category %>
+<% end %>

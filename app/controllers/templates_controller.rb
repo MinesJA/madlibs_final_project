@@ -11,6 +11,7 @@ before_action :require_logged_in
   end
 
   def categoryindex
+    @categories = Template.categories
     @templates = Template.all
   end
 
@@ -25,16 +26,14 @@ before_action :require_logged_in
   end
 
   def create
-
     @template = Template.new
     @template.user_id = current_user.id
     @template.title = params[:template][:title]
     @template.story_template = params[:template][:story_template]
     @template.category = params[:template][:category]
     @template.save
-    byebug
-    redirect_to @template
 
+    redirect_to @template
   end
 
 end
