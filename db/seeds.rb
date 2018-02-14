@@ -37,11 +37,11 @@ hypnosis_complete = "Getting quality sleep isn’t easy. Waking up feeling #Adje
 
 #######$$$$$    USERS     $$$$$#######
 
-jon = User.create!(name:"Jon")
-frank = User.create!(name:"Frank")
-jess = User.create!(name:"Jess")
-david = User.create!(name:"David")
-mary = User.create!(name:"Mary")
+jon = User.create!(name:"Jon", password_digest: "12345")
+frank = User.create!(name:"Frank", password_digest: "12345")
+jess = User.create!(name:"Jess", password_digest: "12345")
+david = User.create!(name:"David", password_digest: "12345")
+mary = User.create!(name:"Mary", password_digest: "12345")
 
 #######$$$$$    TEMPLATES     $$$$$#######
 
@@ -55,7 +55,6 @@ granny = mary.templates.create!(title: "Granny Opens Fire", story_template: gran
 
 stolen = david.templates.create!(title: "The Stolen Wallet", story_template: wallet_template, category: "Police Blotter")
 
-# Template.create(title: "Pistol Packing Granny", story_template: pistol_packing_granny, category: "Police Blotter")
 
 #######$$$$$    COMPLETED STORY     $$$$$#######
 
