@@ -1,13 +1,15 @@
 
-<h2><%= @completed_story.template.title  %></h2>
-<h4>Written by: <%= @completed_story.template.user.name  %></h2>
-<h4>Submitted by: <%= @completed_story.user.name  %></h2>
-<p>Date submitted: <%= @completed_story.created_at %></p>
+<div class="container">
+  <div class="jumbotron">
 
-<br>
+    <h2><%= @completed_story.template.title  %></h2>
+    <h4>Written by: <%= @completed_story.template.user.name  %></h2>
+    <h4>Submitted by: <%= @completed_story.user.name  %></h2>
+    <p>Date submitted: <%= @completed_story.created_at %></p>
 
-<p><%= @completed_story.finished_story %></p>
-
+    <br>
+  </div>
+</div>
 
 <% if !flash[:success] %>
   <p>Give this story a rating from 1 to 5 (5 being the funnest story you've ever filled out):</p>

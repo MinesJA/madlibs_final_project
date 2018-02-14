@@ -19,6 +19,9 @@ before_action :require_logged_in
     @templates = Template.all.select do |each_story|
        each_story.category == params[:category]
       end
+
+    @category = params[:category]
+
   end
 
   def new
@@ -32,7 +35,7 @@ before_action :require_logged_in
 
     if @template.valid?
       @template.save
-      redirect_to @template
+      redirect_to categories_path
     else
       render :new
     end

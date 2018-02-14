@@ -1,18 +1,13 @@
 
-<h1>Hi, <%= @user.name %></h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome <%= current_user.name %></h1>
+    <p>Play madlibs, create your own stories, see other user's stories.</p>
+  </div
+</div>
 
-<%= link_to "Play MADLIBS", categories_path  %><br> <!-- LINKS TO CATEGORY OPTIONS, THEN STORY OPTIONS -->
-<%= link_to "Create a MADLIBS story", new_template_path  %><br> <!-- TEMPLATES#NEW -->
-<%= link_to "Read all user's completed stories", completed_stories_path %>
-<%= link_to "See all users", users_path %> <br>
-<%= link_to "View Account", user_path(@user) %>
 
+What should we put on the welcome page?
 
 
 <%= @random_story.finished_story %>
-
-
-<br><br><br>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>

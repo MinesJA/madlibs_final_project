@@ -1,19 +1,31 @@
-<h1>Choose a Story</h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Choose a Story</h1>
+    <h3><%= @category %> // <%= link_to"Choose another category", categories_path%> </h3>
 
-<p>Title</p>
-<p>Category</p>
-<p>Author</p>
-<p>Average Rating</p>
-<p>Date Created</p>
+    <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">TITLE</th>
+            <th scope="col">AUTHOR</th>
+            <th scope="col">AVERAGE RATING</th>
+            <th scope="col">DATE CREATED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @templates.each do |template| %>
+             <td><%= link_to template.title, template_path(template) %></td>
+             <td><%= link_to template.user.name, user_path(template.user) %></td>
+             <td><%= template.avg_rating %></td>
+             <td><%= template.created_at %></td>
+             </tr>
+            <% end %>
 
-<% @templates.each do |template| %>
-  <%= link_to template.title, template_path(template) %>
 
-  <%= template.category %>
+        </tbody>
+      </table>
 
-  <%= link_to template.user.name, user_path(template.user) %>
-
-  <%= template.avg_rating %>
-
-  <%= template.created_at %>
-<% end %>
+</div>
+</div>
