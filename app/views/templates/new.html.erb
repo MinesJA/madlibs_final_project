@@ -1,9 +1,25 @@
+<% if @template.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@template.errors.count, "error") %>
+      prohibited this story from being saved:
+    </h2>
+
+    <ul>
+    <% @template.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for(@template) do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
   <%= f.label :story_template  %><br>
   <%= f.text_area :story_template %>
-  <%= f.label :story_template %>
+  <%= f.label :category %>
   <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help'],
   ['Police Blotter','Police Blotter'],['History', 'History'],['How-To', 'How-To'],
   ['Nursery Rhyme', 'Nursery Rhyme'], ['Diary Entry', 'Diary Entry']] %>
