@@ -1,18 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <h3><%= @template.title %></h3>
+    <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
+    <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
 
-<h3><%= @template.title %></h3>
-<p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
-<p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
-
-<p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+    <p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+  </div>
+</div>
 
 
-<%= form_tag '/completed_stories' do %>
-  <% @hash.each do |key,value| %>
-    <%= label_tag :"#{key}:" %><br>
+<div class="container">
+  <div class="jumbotron">
+    <%= form_tag '/completed_stories' do %>
 
-    <%= text_field_tag :"words[#{key}]" %><br>
+      <% count = 0 %>
+      <% @hash.each do |key,value| %>
+        <%= label_tag :"#{key}:" %>
+        <%= text_field_tag :"words[#{key}]" %>
+        <% count += 1 %>
+        <% if count % 4 == 0 %>
+            <br>            
+          <% end %>
+        <% end %>
+        <br><br>
+        <%= hidden_field_tag(:template_id, @template.id) %>
+        <%= submit_tag "Create Story" %>
     <% end %>
 
-    <%= hidden_field_tag(:template_id, @template.id) %>
-    <%= submit_tag "Create Story" %>
-<% end %>
+  </div>
+</div>

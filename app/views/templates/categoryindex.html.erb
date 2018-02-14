@@ -1,20 +1,24 @@
 
-<h2>Choose a Story Category</h2>
+
 <div class="container">
+  <div class="jumbotron">
+    <h1>Choose a Story Category</h1>
+
+
+
+<div class="container">
+  <h3>
   <div class="row">
-    <div class="col-sm-2 well" style="background-color:lightgray ;"> <%= link_to "Self Help", category_path("Self Help")%></div>
-    <div class="col-sm-2 well" style="background-color:lightgray ;">politics</div>
-    <div class="col-sm-2 well" style="background-color:lightgray ;">History</div>
+    <div class="col-sm-4 well text-center"> <%= link_to"Self Help", category_path("Self Help")%></div>
+    <div class="col-sm-4 well text-center"><%= link_to "History", category_path("History")%></div>
+    <div class="col-sm-4 well text-center"><%= link_to "Police Blotter", category_path("Police Blotter")%></div>
   </div>
   <div class="row">
-    <div class="col-sm-2 well" style="background-color:lightgray ;">Police Blotter</div>
-    <div class="col-sm-2 well" style="background-color:lightgray ;">How-To</div>
-    <div class="col-sm-2 well" style="background-color:lightgray ;"></div>
+    <div class="col-sm-4 well text-center"><%= link_to "Nursery Rhyme", category_path("Nursery Rhyme")%></div>
+    <div class="col-sm-4 well text-center"><%= link_to "How-To", category_path("How-To")%></div>
+    <div class="col-sm-4 well text-center"><%= link_to "Politics", category_path("Politics")%></div>
   </div>
 </div>
 
-
-<br><br><br>
-<% @categories.each do |category| %>
-  <%= link_to category, category_path(category) %>
-<% end %>
+</div>
+</div>
