@@ -17,7 +17,7 @@ before_action :require_logged_in
 
   def categoryshow
     @templates = Template.all.select do |each_story|
-       each_story.category == params[:category]
+       each_story.category == template_params
       end
   end
 
@@ -26,14 +26,22 @@ before_action :require_logged_in
   end
 
   def create
-    @template = Template.new
+    @template = Template.new(template_params)
     @template.user_id = current_user.id
-    @template.title = params[:template][:title]
-    @template.story_template = params[:template][:story_template]
-    @template.category = params[:template][:category]
-    @template.save
 
-    redirect_to @template
+    if @template.valid?
+      @template.save
+      redirect_to @template
+    else
+      render :new
+    end
   end
+
+  private
+
+  def template_params
+    params.require(:template).permit(:title, :story_template, :category)
+  end
+
 
 end
