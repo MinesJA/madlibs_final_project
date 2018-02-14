@@ -37,7 +37,7 @@ hypnosis_complete = "Getting quality sleep isn’t easy. Waking up feeling #Adje
 
 #######$$$$$    USERS     $$$$$#######
 
-jon = User.create!(name:"Jon")
+jon = User.create!(name:"Jon", )
 frank = User.create!(name:"Frank")
 jess = User.create!(name:"Jess")
 david = User.create!(name:"David")
