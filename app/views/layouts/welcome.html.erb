@@ -13,21 +13,21 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
+      <a class="navbar-brand" href="/">MADLIBS!</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Play MADLIBS", categories_path  %></li>
+      <li><%= link_to "Create a MADLIBS story", new_template_path  %></li>
+      <li><%= link_to "Read all user's completed stories", completed_stories_path %></li>
+      <li><%= link_to "See all users", users_path %> </li>
+      <li><%= link_to "View Account", user_path(@user) %></li>
+    </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
-
-<div class="container">
-  <div class="jumbotron">
-    <h1>MADLIBS!</h1>
-    <p>Play madlibs, create your own stories, see other user's stories.</p>
-  </div
-</div>
 
 
 <div class="container">

@@ -1,8 +1,20 @@
-<h1>Choose a Story Category</h1>
+
+<h2>Choose a Story Category</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 well" style="background-color:lightgray ;"> <%= link_to "Self Help", category_path("Self Help")%></div>
+    <div class="col-sm-2 well" style="background-color:lightgray ;">politics</div>
+    <div class="col-sm-2 well" style="background-color:lightgray ;">History</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 well" style="background-color:lightgray ;">Police Blotter</div>
+    <div class="col-sm-2 well" style="background-color:lightgray ;">How-To</div>
+    <div class="col-sm-2 well" style="background-color:lightgray ;"></div>
+  </div>
+</div>
 
 
-
-
+<br><br><br>
 <% @categories.each do |category| %>
   <%= link_to category, category_path(category) %>
 <% end %>
