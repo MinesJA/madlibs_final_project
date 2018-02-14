@@ -1,6 +1,12 @@
 
-<%= form_tag '/completed_stories' do %>
+<h3><%= @template.title %></h3>
+<p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
+<p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
 
+<p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+
+
+<%= form_tag '/completed_stories' do %>
   <% @hash.each do |key,value| %>
     <%= label_tag :"#{key}:" %><br>
 
@@ -9,5 +15,4 @@
 
     <%= hidden_field_tag(:template_id, @template.id) %>
     <%= submit_tag "Create Story" %>
-
 <% end %>
