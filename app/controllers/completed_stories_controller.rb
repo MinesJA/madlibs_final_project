@@ -25,4 +25,19 @@ class CompletedStoriesController < ApplicationController
     @completed_story = CompletedStory.find(params[:id])
   end
 
+  def update
+    @completed_story = CompletedStory.find(params[:id])
+    @completed_story.temp_rating = params[:completed_story][:temp_rating]
+    @completed_story.save
+
+
+    avg_rating = @completed_story.template.calculate_average_rating
+
+    @completed_story.template.avg_rating = avg_rating
+    @completed_story.template.save
+
+    flash[:success] = "Great! You gave '#{@completed_story.template.title}' a rating of #{params[:completed_story][:temp_rating]}"
+    render :show
+  end
+
 end

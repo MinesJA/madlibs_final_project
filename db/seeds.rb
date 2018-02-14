@@ -75,6 +75,6 @@ gran = granny.completed_stories.new(finished_story:granny_complete)
 gran.user = mary
 gran.save
 
-stol = stolen.completed_stories.new(finished_story:wallet_complete)
+stol = stolen.completed_stories.new(finished_story:wallet_complete, temp_rating: )
 stol.user = frank
 stol.save

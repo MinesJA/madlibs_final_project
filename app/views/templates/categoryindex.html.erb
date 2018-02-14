@@ -1,8 +1,5 @@
 <h1>Choose a Story Category</h1>
 
-
-
-
 <% @categories.each do |category| %>
   <%= link_to category, category_path(category) %>
 <% end %>

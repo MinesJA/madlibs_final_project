@@ -5,6 +5,7 @@ class Template < ApplicationRecord
   validates :title, :story_template, uniqueness: true
   validate :select_key_words
 
+
 ######## VALIDATOR METHOD ##############
 
   def select_key_words
@@ -34,6 +35,19 @@ class Template < ApplicationRecord
       categories << template.category
     end
     categories.uniq
+  end
+
+
+
+  def calculate_average_rating
+    array_ratings = self.completed_stories.map {|completed_story| completed_story.temp_rating}
+
+    if !array_ratings.first
+      return nil
+    else
+      sum_ratings = array_ratings.inject(0){|sum,x| sum + x }
+      sum_ratings/array_ratings.count
+    end
   end
 
 

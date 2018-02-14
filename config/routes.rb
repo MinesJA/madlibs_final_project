@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get '/categories', to: 'templates#categoryindex', as: 'categories'
   get '/categories/:category', to: 'templates#categoryshow', as: 'category'
+  patch '/completed_stories/:id/rate', to: 'completed_stories#rate'
 end
