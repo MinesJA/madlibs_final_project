@@ -45,15 +45,15 @@ mary = User.create!(name:"Mary")
 
 #######$$$$$    TEMPLATES     $$$$$#######
 
-hypnosis = jon.templates.create!(title: "Hypnosis Can Help You Sleep", story_template: hypnosis_for_sleep, category: "Self Help")
+hypnosis = jon.templates.create!(title: "Hypnosis Can Help You Sleep", story_template: hypnosis_for_sleep, category: "Self Help", avg_rating: 3)
 
-donald = jon.templates.create!(title: "Donald Trump is not very smart! Sad!", story_template: donald_trump, category: "Politics")
+donald = jon.templates.create!(title: "Donald Trump is not very smart! Sad!", story_template: donald_trump, category: "Politics", avg_rating: 4)
 
-benjamin = jess.templates.create!(title: "Benjamin Franklin is Pretty Cool", story_template: benjamin_franklin_is_cool, category: "History")
+benjamin = jess.templates.create!(title: "Benjamin Franklin is Pretty Cool", story_template: benjamin_franklin_is_cool, category: "History", avg_rating: 2)
 
-granny = mary.templates.create!(title: "Granny Opens Fire", story_template: granny_opens_fire, category: "Police Blotter")
+granny = mary.templates.create!(title: "Granny Opens Fire", story_template: granny_opens_fire, category: "Police Blotter", avg_rating: 3)
 
-stolen = david.templates.create!(title: "The Stolen Wallet", story_template: wallet_template, category: "Police Blotter")
+stolen = david.templates.create!(title: "The Stolen Wallet", story_template: wallet_template, category: "Police Blotter", avg_rating: 5)
 
 # Template.create(title: "Pistol Packing Granny", story_template: pistol_packing_granny, category: "Police Blotter")
 
