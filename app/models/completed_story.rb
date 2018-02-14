@@ -13,4 +13,6 @@ class CompletedStory < ApplicationRecord
     story
   end
 
+
+
 end

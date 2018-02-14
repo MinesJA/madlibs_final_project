@@ -1,1 +1,18 @@
+
+<h2><%= @completed_story.template.title  %></h2>
+<h4>Written by: <%= @completed_story.template.user.name  %></h2>
+<h4>Submitted by: <%= @completed_story.user.name  %></h2>
+<p>Date submitted: <%= @completed_story.created_at %></p>
+
+<br>
+
 <p><%= @completed_story.finished_story %></p>
+
+<p>Give this story a rating from 1 to 5 (5 being the funnest story you've ever filled out):</p>
+
+<%= form_for(@completed_story) do |f| %>
+  <%= f.select :temp_rating, [['1', 1], ['2', 2], ['3', 3], ['4',4], ['5',5]] %>
+  <%= f.submit 'Rate Story' %>
+<% end %>
+
+<%= flash[:success] %>

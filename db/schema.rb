@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213222332) do
+ActiveRecord::Schema.define(version: 20180214192825) do
 
   create_table "completed_stories", force: :cascade do |t|
     t.integer "template_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180213222332) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "temp_rating"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -27,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180213222332) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "avg_rating"
+    t.string "temp_pic"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180213222332) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_pic"
   end
 
 end

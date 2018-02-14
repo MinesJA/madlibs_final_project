@@ -17,7 +17,7 @@ before_action :require_logged_in
 
   def categoryshow
     @templates = Template.all.select do |each_story|
-       each_story.category == template_params
+       each_story.category == params[:category]
       end
   end
 
@@ -40,7 +40,7 @@ before_action :require_logged_in
   private
 
   def template_params
-    params.require(:template).permit(:title, :story_template, :category)
+    params.require(:template).permit(:title, :story_template, :category, :rating)
   end
 
 

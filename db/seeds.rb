@@ -58,22 +58,22 @@ stolen = david.templates.create!(title: "The Stolen Wallet", story_template: wal
 
 #######$$$$$    COMPLETED STORY     $$$$$#######
 
-hyp = hypnosis.completed_stories.new(finished_story:hypnosis_complete)
+hyp = hypnosis.completed_stories.new(finished_story:hypnosis_complete, temp_rating: 3)
 hyp.user = jess
 hyp.save
 
-don = donald.completed_stories.new(finished_story:donald_complete)
+don = donald.completed_stories.new(finished_story:donald_complete, temp_rating: 2)
 don.user = frank
 don.save
 
-ben = benjamin.completed_stories.new(finished_story:benjamin_complete)
+ben = benjamin.completed_stories.new(finished_story:benjamin_complete, temp_rating: 5)
 ben.user = jess
 ben.save
 
-gran = granny.completed_stories.new(finished_story:granny_complete)
+gran = granny.completed_stories.new(finished_story:granny_complete, temp_rating: 4)
 gran.user = mary
 gran.save
 
-stol = stolen.completed_stories.new(finished_story:wallet_complete)
+stol = stolen.completed_stories.new(finished_story:wallet_complete, temp_rating: 1)
 stol.user = frank
 stol.save
