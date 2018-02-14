@@ -1,5 +1,19 @@
 <h1>Choose a Story</h1>
 
-<% @templates.each do |each_story| %>
-  <%= link_to each_story.title, template_path(each_story) %>
-  <% end %>
+<p>Title</p>
+<p>Category</p>
+<p>Author</p>
+<p>Average Rating</p>
+<p>Date Created</p>
+
+<% @templates.each do |template| %>
+  <%= link_to template.title, template_path(template) %>
+
+  <%= template.category %>
+
+  <%= link_to template.user.name, user_path(template.user) %>
+
+  <%= template.avg_rating %>
+
+  <%= template.created_at %>
+<% end %>

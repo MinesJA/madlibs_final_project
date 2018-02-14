@@ -26,6 +26,7 @@ before_action :require_logged_in
   end
 
   def create
+    byebug
     @template = Template.new(template_params)
     @template.user_id = current_user.id
 
@@ -40,7 +41,7 @@ before_action :require_logged_in
   private
 
   def template_params
-    params.require(:template).permit(:title, :story_template, :category, :rating)
+    params.require(:template).permit(:title, :story_template, :category, :rating, :image)
   end
 
 

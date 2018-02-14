@@ -24,9 +24,18 @@
   <%= f.text_field :title %><br>
   <%= f.label :story_template  %><br>
   <%= f.text_area :story_template %>
+<<<<<<< HEAD
   <%= f.label :category %>
   <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help'],
   ['Police Blotter','Police Blotter'],['History', 'History'],['How-To', 'How-To'],
   ['Nursery Rhyme', 'Nursery Rhyme'], ['Diary Entry', 'Diary Entry']] %>
+=======
+
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+
+  <%= f.label :category %>
+  <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help']] %>
+>>>>>>> 93b0c3ce573dd7e8527c4ce716998f5f7ee9a9fd
   <%= f.submit  %>
 <%end%>

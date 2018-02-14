@@ -9,15 +9,38 @@
 
 
 <h4>Created Templates</h4>
-<% @user.templates do |template| %>
 
-  <%= link_to template.title, templates_path(template)  %>
+<p>Story Name</p>
+<p>Category</p>
+<p>Average Rating</p>
+<p>Date Created</p>
+
+<% @user.templates.each do |template| %>
+
+  <%= link_to template.title, templates_path(template) %>
+
   <%= template.category %>
+
+  <%= template.avg_rating %>
+
+  <%= template.created_at %>
 
 <% end %>
 
 <h4>Submitted Stories</h4>
-<% @user.completed_stories do |completed_story| %>
-  <%= link_to completed_story.template.title, completed_story(completed_story) %>
+
+<p>Story Name</p>
+<p>Category</p>
+<p>User rating</p>
+<p>Date Submitted</p>
+
+<% @user.completed_stories.each do |completed_story| %>
+
+  <%= link_to completed_story.template.title, completed_story_path(completed_story) %>
+
   <%= completed_story.template.category %>
+
+  <%= completed_story.temp_rating %>
+
+  <%= completed_story.created_at  %>
 <% end %>

@@ -8,6 +8,10 @@
 <%= link_to "View Account", user_path(@user) %>
 
 
+
+<%= @random_story.finished_story %>
+
+
 <br><br><br>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='logout'>
