@@ -21,7 +21,20 @@ before_action :require_logged_in
       end
 
     @category = params[:category]
+  end
 
+  def edit
+    @template = Template.find(params[:id])
+  end
+
+  def update
+    @template = Template.find(params[:id])
+
+    if @template.update(template_params)
+      redirect_to category_path(template_params[:category])
+    else
+      render :edit
+    end
   end
 
   def new

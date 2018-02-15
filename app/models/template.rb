@@ -41,7 +41,6 @@ class Template < ApplicationRecord
   end
 
 
-
   def calculate_average_rating
     array_ratings = self.completed_stories.map {|completed_story| completed_story.temp_rating}
 
@@ -54,11 +53,25 @@ class Template < ApplicationRecord
   end
 
   def self.random_template
-    num = Template.count - 1
-
-    @template = Template.all[rand(0..num)]
+    if self.count == 1
+      self.first
+    else
+      num = Template.count - 1
+      self.all[rand(0..num)]
+    end
   end
 
+  def self.rated_templates
+    self.all.select do |template|
+      template.avg_rating != nil
+    end
+  end
+
+  def self.most_popular_template
+    self.rated_templates.sort_by do |template|
+      template.avg_rating
+    end.last
+  end
 
 
 end

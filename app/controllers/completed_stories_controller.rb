@@ -38,6 +38,7 @@ class CompletedStoriesController < ApplicationController
 
     flash[:success] = "Great! You gave '#{@completed_story.template.title}' a rating of #{params[:completed_story][:temp_rating]}"
     render :show
+    
   end
 
 end
