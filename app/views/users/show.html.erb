@@ -5,7 +5,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url %></div>
+        <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url(:medium) %></div>
         <div class="col-sm-8  text-center"> <h1><%= @user.name %></h1></div>
       </div>
     </div>
@@ -31,7 +31,7 @@
              <td><%= link_to template.title, template_path(template) %></td>
              <td><%= template.category %></td>
              <td><%= template.avg_rating %></td>
-             <td><%= template.created_at %></td>
+             <td>  <%= completed_story.created_at.strftime('%B %d, %G')  %></td>
              </tr>
             <% end %>
         </tbody>
@@ -56,7 +56,7 @@
          <td><%= link_to completed_story.template.title, completed_story_path(completed_story) %></td>
          <td><%= completed_story.template.category %></td>
          <td><%= completed_story.temp_rating %></td>
-         <td><%= completed_story.created_at  %></td>
+         <td><%= template.created_at.strftime('%B %d, %G') %></td>
          </tr>
         <% end %>
     </tbody>

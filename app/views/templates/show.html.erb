@@ -1,12 +1,14 @@
 <div class="container">
 <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
-    <%= image_tag @template.avatar.url %>
+  <%= image_tag @template.avatar.url(:medium) %>
 
     <h3><%= @template.title %></h3>
     <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
     <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
 
     <p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+
+    <%= link_to "Edit this Template", edit_template_path(@template) %>
   </div>
 </div>
 

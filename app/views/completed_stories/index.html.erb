@@ -21,6 +21,6 @@
 
   <p> <%= completed_story.user.name %> </p>
 
-  <p> <%= completed_story.created_at %> </p>
+  <p> <%= completed_story.created_at.strftime('%B %d, %G') %> </p>
 
 <% end %>

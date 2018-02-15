@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>Edit Story</h2>
+
+
+    <%= image_tag @template.avatar.url(:medium) %>
+
+    <h3><%= @template.title %></h3>
+    <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
+    <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
+
+    <p>Edit your story below.</p>
+  </div
+</div>
+
+
+<% if @template.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@template.errors.count, "error") %>
+      prohibited this story from being saved:
+    </h2>
+
+    <ul>
+    <% @template.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @template, html: { multipart: true } do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :story_template  %><br>
+  <%= f.text_area :story_template, cols:80, rows:10 %><br>
+  <%= f.label :category %>
+  <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help'],
+  ['Police Blotter','Police Blotter'],['History', 'History'],['How-To', 'How-To'],
+  ['Nursery Rhyme', 'Nursery Rhyme']] %> <br><br>
+
+  <%= f.file_field :avatar %>
+
+  <%= f.submit "Update Story" %>
+<%end%>

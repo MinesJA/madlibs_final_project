@@ -1,17 +1,12 @@
 class WelcomeController < ApplicationController
   before_action :require_logged_in
+  
 
   def home
     @templates = Template.all
-
-    @rated_templates = Template.all.select {|template| template.avg_rating != nil}
-    @most_popular_template = @rated_templates.sort_by{ |template| template.avg_rating }.last
-
-    num = @most_popular_template.completed_stories.count - 1
-    num = rand(0..num)
-    @random_story = @most_popular_template.completed_stories[num]
-    # picks random story off most_popular_template
-
+    @random_template = Template.random_template
+    @most_popular_template = Template.most_popular_template
+    @story_from_pop_temp = CompletedStory.story_from_popular_template
   end
 
 
