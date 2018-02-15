@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="jumbotron">
+<div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
     <%= image_tag @template.avatar.url %>
 
     <h3><%= @template.title %></h3>
@@ -12,22 +12,35 @@
 
 
 <div class="container">
-  <div class="jumbotron">
-    <%= form_tag '/completed_stories' do %>
+  <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
+    <div class="container">
+      <div class="row">
 
-      <% count = 0 %>
-      <% @hash.each do |key,value| %>
-        <%= label_tag :"#{key}:" %>
-        <%= text_field_tag :"words[#{key}]" %>
-        <% count += 1 %>
-        <% if count % 4 == 0 %>
-            <br>
-          <% end %>
+
+        <%= form_tag '/completed_stories' do %>
+        <% count = 0 %>
+          <% @hash.each do |key,value| %>
+          <div class="col-lg-3 well text-center">
+            <%= label_tag :"#{key}:" %>
+            <%= text_field_tag :"words[#{key}]" %>
+              <% if count % 3 != 0 %>
+                <div class="col-lg-1 well text-center"></div>
+              <% end %>
+          </div>
+
+            <% end %>
+
+          </div>
+            <br><br>
+            <%= hidden_field_tag(:template_id, @template.id) %>
+            <%= submit_tag "Create Story" %>
         <% end %>
-        <br><br>
-        <%= hidden_field_tag(:template_id, @template.id) %>
-        <%= submit_tag "Create Story" %>
-    <% end %>
+
+
+
+
+
+
 
   </div>
 </div>

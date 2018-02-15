@@ -56,3 +56,22 @@ class Template < ApplicationRecord
 
 
 end
+
+
+
+
+
+# <%= form_tag '/completed_stories' do %>
+#   <% count = 0 %>
+#   <% @hash.each do |key,value| %>
+#     <%= label_tag :"#{key}:" %>
+#     <%= text_field_tag :"words[#{key}]" %>
+#     <% count += 1 %>
+#     <% if count % 4 == 0 %>
+#         <br>
+#       <% end %>
+#     <% end %>
+#     <br><br>
+#     <%= hidden_field_tag(:template_id, @template.id) %>
+#     <%= submit_tag "Create Story" %>
+# <% end %>

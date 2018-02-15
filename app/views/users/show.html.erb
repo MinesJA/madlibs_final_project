@@ -1,50 +1,68 @@
 
 <div class="container">
-  <div class="jumbotron">
-
-<%= image_tag @user.avatar.url %>
-
-<%= @user.name %>
-
-<p>Number of submissions</p>
+    <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
 
 
-<h4>Created Templates</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url %></div>
+        <div class="col-sm-8  text-center"> <h1><%= @user.name %></h1></div>
+      </div>
+    </div>
 
-<p>Story Name</p>
-<p>Category</p>
-<p>Average Rating</p>
-<p>Date Created</p>
+    </div
+    </div>
 
-<% @user.templates.each do |template| %>
 
-  <%= link_to template.title, templates_path(template) %>
+<h3>Submitted Stories</h3>
+    <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">STORY NAME</th>
+            <th scope="col">CATEGORY</th>
+            <th scope="col">AVERAGE RATING</th>
+            <th scope="col">DATE CREATED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @user.templates.each do |template| %>
+             <td><%= link_to template.title, template_path(template) %></td>
+             <td><%= template.category %></td>
+             <td><%= template.avg_rating %></td>
+             <td><%= template.created_at %></td>
+             </tr>
+            <% end %>
+        </tbody>
+      </table>
 
-  <%= template.category %>
 
-  <%= template.avg_rating %>
 
-  <%= template.created_at %>
+<h3>Completed Stories</h3>
+<br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STORY NAME</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">USER RATING</th>
+        <th scope="col">DATE CREATED</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @user.completed_stories.each do |completed_story| %>
+         <td><%= link_to completed_story.template.title, completed_story_path(completed_story) %></td>
+         <td><%= completed_story.template.category %></td>
+         <td><%= completed_story.temp_rating %></td>
+         <td><%= completed_story.created_at  %></td>
+         </tr>
+        <% end %>
+    </tbody>
+  </table>
 
-<% end %>
 
-<h4>Submitted Stories</h4>
-
-<p>Story Name</p>
-<p>Category</p>
-<p>User rating</p>
-<p>Date Submitted</p>
-
-<% @user.completed_stories.each do |completed_story| %>
-
-  <%= link_to completed_story.template.title, completed_story_path(completed_story) %>
-
-  <%= completed_story.template.category %>
-
-  <%= completed_story.temp_rating %>
-
-  <%= completed_story.created_at  %>
-<% end %>
 
 </div
 </div>

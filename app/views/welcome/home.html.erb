@@ -1,10 +1,13 @@
 
 <div class="container">
-  <div class="jumbotron">
-    <%= image_tag @user.avatar.url %>
-    <h1>Welcome <%= current_user.name %></h1>
+  <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url %></div>
+        <div class="col-sm-8  text-center"><h1>Welcome <%= current_user.name %></h1></div>
+      </div> <br>
     <p>Play madlibs, create your own stories, see other user's stories.</p>
-  </div
+  </div>
 </div>
 
 

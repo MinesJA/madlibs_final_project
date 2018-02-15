@@ -1,8 +1,8 @@
-<%= form_tag('/login') do %>
-  <%= label_tag :name%><br>
-  <%= text_field_tag :'user[name]'%><br>
+<%= form_tag('/login')do %>
+  <h4><%= label_tag :name%></h4>
+  <%= text_field_tag :'user[name]'%>
 
-  <%= label_tag :password%><br>
+  <h4><%= label_tag :password%><h4>
   <%= password_field_tag :'user[password]'%><br><br>
 
   <%= submit_tag 'Login'%>
