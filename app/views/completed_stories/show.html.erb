@@ -2,11 +2,13 @@
 <div class="container">
   <div class="jumbotron">
 
+    <%= image_tag @completed_story.template.avatar.url %>
     <h2><%= @completed_story.template.title  %></h2>
     <h4>Written by: <%= @completed_story.template.user.name  %></h2>
     <h4>Submitted by: <%= @completed_story.user.name  %></h2>
     <p>Date submitted: <%= @completed_story.created_at %></p>
 
+    <p><%= @completed_story.finished_story %></p>
     <br>
   </div>
 </div>

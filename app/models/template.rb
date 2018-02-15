@@ -5,6 +5,9 @@ class Template < ApplicationRecord
   validates :title, :story_template, uniqueness: true
   validate :select_key_words
 
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 
 ######## VALIDATOR METHOD ##############
 

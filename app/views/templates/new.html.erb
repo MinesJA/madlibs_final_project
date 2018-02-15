@@ -23,7 +23,7 @@
 
 
 
-<%= form_for(@template) do |f| %>
+<%= form_for @template, url: templates_path, html: { multipart: true } do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
   <%= f.label :story_template  %><br>
@@ -32,5 +32,8 @@
   <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help'],
   ['Police Blotter','Police Blotter'],['History', 'History'],['How-To', 'How-To'],
   ['Nursery Rhyme', 'Nursery Rhyme']] %> <br><br>
+
+  <%= f.file_field :avatar %>
+
   <%= f.submit "Create New Story" %>
 <%end%>
