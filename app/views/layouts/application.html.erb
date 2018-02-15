@@ -9,10 +9,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <style> body {background-color: coral;}</style>
+  <!--- STYLING -->
+  <style>
+  body {background-color: blanchedalmond;}
+  /* body {background-image: url(/assets/background.jpg); } */
+
+  </style>
 
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container-fluid" >
     <ul class="nav navbar-nav">
       <li><%= link_to "HOME", "/"  %></li>
       <li><%= link_to "PLAY MADLIBS", categories_path  %></li>
@@ -23,6 +28,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
+
   </div>
 </nav>
 

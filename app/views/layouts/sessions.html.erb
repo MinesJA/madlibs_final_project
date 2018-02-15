@@ -10,6 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <style>
+  /* body {background-color: blanchedalmond;} */
+
+  </style>
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -23,17 +28,19 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="jumbotron">
-    <h1>MADLIBS!</h1>
-    <p>Play madlibs, create your own stories, see other user's stories.</p>
+<div class="container" >
+  <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
+    <h1 style="color:midnightblue;">MADLIBS!</h1>
+    <p style="color:midnightblue;"> Play madlibs, create your own stories, see other user's stories.</p>
   </div
 </div>
 
-
-<div class="container">
-  <%= yield %>
+<div class="row">
+  <div class="col-sm-4"><center><%= yield %></div></center>
+  <div class="col-sm-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
 </div>
+
+
 
 </body>
 </html>
