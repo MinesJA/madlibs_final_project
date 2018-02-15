@@ -24,7 +24,7 @@
 
   <%= template.avg_rating %>
 
-  <%= template.created_at %>
+  <%= template.created_at.strftime('%B %d, %G') %>
 
 <% end %>
 
@@ -43,7 +43,7 @@
 
   <%= completed_story.temp_rating %>
 
-  <%= completed_story.created_at  %>
+  <%= completed_story.created_at.strftime('%B %d, %G')  %>
 <% end %>
 
 </div

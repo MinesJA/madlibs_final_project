@@ -6,7 +6,7 @@
     <h2><%= @completed_story.template.title  %></h2>
     <h4>Written by: <%= @completed_story.template.user.name  %></h2>
     <h4>Submitted by: <%= @completed_story.user.name  %></h2>
-    <p>Date submitted: <%= @completed_story.created_at %></p>
+    <p>Date submitted: <%= @completed_story.created_at.strftime('%B %d, %G') %></p>
 
     <p><%= @completed_story.finished_story %></p>
     <br>

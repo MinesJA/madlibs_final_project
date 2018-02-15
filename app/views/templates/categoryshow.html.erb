@@ -19,7 +19,7 @@
              <td><%= link_to template.title, template_path(template) %></td>
              <td><%= link_to template.user.name, user_path(template.user) %></td>
              <td><%= template.avg_rating %></td>
-             <td><%= template.created_at %></td>
+             <td><%= template.created_at.strftime('%B %d, %G') %></td>
              </tr>
             <% end %>
 

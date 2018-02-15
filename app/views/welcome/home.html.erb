@@ -16,4 +16,6 @@
 <p>Written by: <%= link_to @random_story.template.user.name, user_path(@random_story.template.user) %></p>
 <p>Filled out by: <%= link_to @random_story.user.name, user_path(@random_story.user) %></p>
 
-<%= @random_story.finished_story %>
+<p><%= @random_story.finished_story %></p>
+
+<p><%= link_to 'Play this story!', template_path(@random_story.template) %></p>

@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
 
   def home
     @templates = Template.all
+    @template = Template.random_template
 
     @rated_templates = Template.all.select {|template| template.avg_rating != nil}
     @most_popular_template = @rated_templates.sort_by{ |template| template.avg_rating }.last

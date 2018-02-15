@@ -53,6 +53,12 @@ class Template < ApplicationRecord
     end
   end
 
+  def self.random_template
+    num = Template.count - 1
+
+    @template = Template.all[rand(0..num)]
+  end
+
 
 
 end
