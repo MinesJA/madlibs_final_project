@@ -7,7 +7,9 @@
 </div>
 
 
-NEEDS TITLE <BR><BR>
-
+<h3><%= @random_story.template.title %></h3>
+<p>Category: <%= link_to @random_story.template.category, category_path(@random_story.template.category) %></p>
+<p>Written by: <%= link_to @random_story.template.user.name, user_path(@random_story.template.user) %></p>
+<p>Filled out by: <%= link_to @random_story.user.name, user_path(@random_story.user) %></p>
 
 <%= @random_story.finished_story %>

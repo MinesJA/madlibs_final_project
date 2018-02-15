@@ -1,6 +1,10 @@
-<h2>Create a New Story</h2>
+<div class="container">
+  <div class="jumbotron">
+    <h2>Create a New Story</h2>
+    <p>Enter a title for your story below. Then write your story in the Story Template field. To select your keywords just write what kind of word you'd like the user to fill in surround by hashtags. For example, "This is my story and I'd like the user to input a #noun_1#." This will prompt the user filling out your madlib with a "Noun:" field. Lastly, select a category your story falls into and then click 'Create Template'.</p>
+  </div
+</div>
 
-<p>Enter a title for your story below. Then write your story in the Story Template field. To select your keywords just write what kind of word you'd like the user to fill in surround by hashtags. For example, "This is my story and I'd like the user to input a #noun_1#." This will prompt the user filling out your madlib with a "Noun:" field. Lastly, select a category your story falls into and then click 'Create Template'.</p>
 
 <% if @template.errors.any? %>
   <div id="error_explanation">
@@ -23,10 +27,10 @@
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
   <%= f.label :story_template  %><br>
-  <%= f.text_area :story_template %>
+  <%= f.text_area :story_template, cols:80, rows:10 %><br>
   <%= f.label :category %>
   <%= f.select :category,[['Politics', 'Politics'], ['Self Help', 'Self Help'],
   ['Police Blotter','Police Blotter'],['History', 'History'],['How-To', 'How-To'],
-  ['Nursery Rhyme', 'Nursery Rhyme'], ['Diary Entry', 'Diary Entry']] %>
-  <%= f.submit  %>
+  ['Nursery Rhyme', 'Nursery Rhyme']] %> <br><br>
+  <%= f.submit "Create New Story" %>
 <%end%>

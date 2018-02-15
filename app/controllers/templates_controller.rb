@@ -29,13 +29,12 @@ before_action :require_logged_in
   end
 
   def create
-    byebug
     @template = Template.new(template_params)
     @template.user_id = current_user.id
 
     if @template.valid?
       @template.save
-      redirect_to categories_path
+      redirect_to category_path(template_params[:category])
     else
       render :new
     end
