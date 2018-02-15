@@ -1,14 +1,21 @@
 <div class="container">
 <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
-  <%= image_tag @template.avatar.url(:medium) %>
 
-    <h3><%= @template.title %></h3>
-    <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
-    <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
 
-    <p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 "> <%= image_tag @template.avatar.url(:medium) %></div>
+      <div class="col-sm-8 ">   <h3><%= @template.title %></h3>
+        <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
+        <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
 
-    <%= link_to "Edit this Template", edit_template_path(@template) %>
+        <p>Fill in the blanks with the prompted words. When you finish, submit your story!</p>
+
+        <%= link_to "Edit this Template", edit_template_path(@template) %></div>
+    </div>
+  </div>
+
+
   </div>
 </div>
 
@@ -22,15 +29,16 @@
         <%= form_tag '/completed_stories' do %>
         <% count = 0 %>
           <% @hash.each do |key,value| %>
-          <div class="col-lg-3 well text-center">
-            <%= label_tag :"#{key}:" %>
+          <div class="col-sm-3 well text-center">
+            <%= label_tag :"#{key}:" %><br>
             <%= text_field_tag :"words[#{key}]" %>
-              <% if count % 3 != 0 %>
-                <div class="col-lg-1 well text-center"></div>
-              <% end %>
           </div>
 
+          <% count += 1 %>
+          <% if count % 3 != 0 %>
+            <div class="col-sm-1 text-center"></div>
             <% end %>
+              <% end %>
 
           </div>
             <br><br>

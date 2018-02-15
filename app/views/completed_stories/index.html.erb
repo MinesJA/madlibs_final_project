@@ -1,26 +1,32 @@
 
-<h2>All Submitted Stories</h2>
+<div class="container">
+<div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
+  <center><h1>All Submitted Stories</h1></center>
+</div>
+</div>
 
 <!--You can access a completed_stories title by going through template. Ex. @completed_story.template.title   -->
 <!--The below should be a grid with the html elements teh headers and the erb tags rendering below the headers  -->
 
-<strong>Story Name</strong>
-<p>Originally Written By</p>
-<p>Written On</p>
-<p>Category</p>
-<p>Submitted By</p>
 
-<% @completed_stories.each do |completed_story| %>
-  <strong> <%= link_to completed_story.template.title, completed_story_path(completed_story) %> </strong>
-
-  <p> <%= completed_story.template.user.name %> </p>
-
-  <p> <%= completed_story.template.created_at %> </p>
-
-  <p> <%= completed_story.template.category %> </p>
-
-  <p> <%= completed_story.user.name %> </p>
-
-  <p> <%= completed_story.created_at.strftime('%B %d, %G') %> </p>
-
-<% end %>
+<br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STORY NAME</th>
+        <th scope="col">ORIGINALLY WRITTEN BY</th>
+        <th scope="col">WRITTEN ON</th>
+        <th scope="col">CATEGORY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @completed_stories.each do |completed_story| %>
+         <td><%= link_to completed_story.template.title, completed_story_path(completed_story) %></td>
+         <td><%= link_to completed_story.template.user.name, user_path(completed_story.template.user) %></td>
+         <td><%= completed_story.template.created_at %></td>
+         <td><%= completed_story.template.category %></td>
+         </tr>
+        <% end %>
+    </tbody>
+  </table>
