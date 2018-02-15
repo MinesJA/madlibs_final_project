@@ -1,5 +1,7 @@
 <div class="container">
   <div class="jumbotron">
+    <%= image_tag @template.avatar.url %>
+
     <h3><%= @template.title %></h3>
     <p>Story Author: <%= link_to @template.user.name, user_path(@template.user) %></p>
     <p>Cateogry: <%= link_to @template.category, category_path(@template.category) %></p>
@@ -19,7 +21,7 @@
         <%= text_field_tag :"words[#{key}]" %>
         <% count += 1 %>
         <% if count % 4 == 0 %>
-            <br>            
+            <br>
           <% end %>
         <% end %>
         <br><br>
