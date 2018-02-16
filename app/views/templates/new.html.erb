@@ -7,17 +7,11 @@
 
 
 <% if @template.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@template.errors.count, "error") %>
-      prohibited this story from being saved:
-    </h2>
-
-    <ul>
+  <div id="error_explanation" class="alert alert-danger" role="alert">
+    <strong>Oh No!</strong>
     <% @template.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
-    </ul>
   </div>
 <% end %>
 

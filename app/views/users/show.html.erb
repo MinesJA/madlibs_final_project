@@ -1,46 +1,41 @@
 
 <div class="container">
-    <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
-
-
+  <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
     <div class="container">
       <div class="row">
         <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url(:medium) %></div>
         <div class="col-sm-8  text-center"> <h1><%= @user.name %></h1></div>
       </div>
     </div>
+  </div>
 
-    </div
-    </div>
+  <h3>Submitted Stories</h3>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STORY NAME</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">AVERAGE RATING</th>
+        <th scope="col">DATE CREATED</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @user.templates.each do |template| %>
+           <td><%= link_to template.title, template_path(template) %></td>
+           <td><%= link_to template.category, category_path(template.category) %></td>
+           <td><%= template.avg_rating %></td>
+           <td><%= template.created_at.strftime('%B %d, %G') %></td>
+      </tr>
+        <% end %>
+    </tbody>
+  </table>
 
+  <br>
 
-<h3>Submitted Stories</h3>
-    <br>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">STORY NAME</th>
-            <th scope="col">CATEGORY</th>
-            <th scope="col">AVERAGE RATING</th>
-            <th scope="col">DATE CREATED</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <% @user.templates.each do |template| %>
-             <td><%= link_to template.title, template_path(template) %></td>
-             <td><%= template.category %></td>
-             <td><%= template.avg_rating %></td>
-             <td> <%= template.created_at.strftime('%B %d, %G')  %></td>
-             </tr>
-            <% end %>
-        </tbody>
-      </table>
-
-
-
-<h3>Completed Stories</h3>
-<br>
+  <h3>Completed Stories</h3>
+  <br>
   <table class="table">
     <thead>
       <tr>
@@ -61,8 +56,4 @@
         <% end %>
     </tbody>
   </table>
-
-
-
-</div
 </div>

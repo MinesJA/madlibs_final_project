@@ -27,29 +27,32 @@
   <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
     <h1>MADLIBS!</h1>
     <p>Play madlibs, create your own stories, see other user's stories.</p>
-  </div
-</div>
+  </div>
 
-<div class="row">
+
   <div class="col-sm-4"><%= yield %></div>
   <div class="col-sm-8">
-
-    <div class="row">
-      <div class="col-sm-4">picture here</div>
-      <div class="col-sm-8">quote here</div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">picture here</div>
-      <div class="col-sm-8">quote here</div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">picture here</div>
-      <div class="col-sm-8">quote here</div>
+    <div class="row well">
+      <div class="col-sm-4"><%=image_tag("oparh_winfrey.jpeg", size:"150x188")%></div>
+      <div class="col-sm-8 text-right"><h4>"Pintpoint your butt." <br><br> - Oprah Winfrey</h4></div>
     </div>
 
-  </div>
+    <div class="row well">
+      <div class="col-sm-8 text-right"><h4>"Secretary of State Rex Tillerson was reported to have called the president a “butthead”." <br><br> - Tobias Funke</h4></div>
+      <div class="col-sm-4 text-right"><%= image_tag("tobias_funke.jpg", size:"150x188") %></div>
+    </div>
+
+    <div class="row well">
+      <div class="col-sm-4"><%= image_tag("aladdin.jpeg", size:"150x188") %></div>
+      <div class="col-sm-8 text-right"><h4>"It might be worth a little experimenting to see for yourself whether your num chuck game improves following sex." <br><br> - Aladdin</h4></div>
+    </div>
+
+    <div class="row well">
+      <div class="col-sm-8 text-right"><h4>"There is tremendous jelly beans in just being Tom Cruise." <br><br> - Nicolas Cage</h4></div>
+      <div class="col-sm-4 text-right"><%= image_tag("nicolas_cage.jpg", size:"150x188") %></div>
+    </div>
+ </div>
 </div>
-
 
 </body>
 </html>

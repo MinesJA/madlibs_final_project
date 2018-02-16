@@ -4,22 +4,35 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 text-center"> <%= image_tag @user.avatar.url(:medium) %></div>
-        <div class="col-sm-8  text-center"><h1>Welcome <%= current_user.name %></h1></div>
-      </div> <br>
-    <p>Play madlibs, create your own stories, see other user's stories.</p>
+        <div class="col-sm-8  text-center">
+          <h1>Welcome <%= current_user.name %></h1>
+          <br>
+          <p>Play madlibs, create your own stories, see other user's stories.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-8 text-right">
+        <h2><%= @story_from_pop_temp.template.title %></h2>
+        <h4>Category: <%= link_to @story_from_pop_temp.template.category, category_path(@story_from_pop_temp.template.category) %></h4>
+        <h4>Written by: <%= link_to @story_from_pop_temp.template.user.name, user_path(@story_from_pop_temp.template.user) %></h4>
+        <h4>Filled out by: <%= link_to @story_from_pop_temp.user.name, user_path(@story_from_pop_temp.user) %></h4>
 
+        <p><%= @story_from_pop_temp.finished_story %></p>
 
-  <%= image_tag @story_from_pop_temp.template.avatar.url(:medium) %>
+        <br>
 
-  <h3><%= @story_from_pop_temp.template.title %></h3>
-  <p>Category: <%= link_to @story_from_pop_temp.template.category, category_path(@story_from_pop_temp.template.category) %></p>
-  <p>Written by: <%= link_to @story_from_pop_temp.template.user.name, user_path(@story_from_pop_temp.template.user) %></p>
-  <p>Filled out by: <%= link_to @story_from_pop_temp.user.name, user_path(@story_from_pop_temp.user) %></p>
+        <h4><%= link_to 'Play this story!', template_path(@story_from_pop_temp.template) %></h4>
 
-  <p><%= @story_from_pop_temp.finished_story %></p>
+      </div>
+      <div class="col-sm-4"><%= image_tag @story_from_pop_temp.template.avatar.url(:medium) %></div>
 
-  <p><%= link_to 'Play this story!', template_path(@story_from_pop_temp.template) %></p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron" style="background:transparent url(/assets/background.jpg) no-repeat center /cover">
 
 
     <%= image_tag @completed_story.template.avatar.url(:medium) %>
@@ -14,15 +14,13 @@
   </div>
 </div>
 
-
-<% if !flash[:success] %>
+<% if !@completed_story.temp_rating %>
   <p>Give this story a rating from 1 to 5 (5 being the funnest story you've ever filled out):</p>
 
   <%= form_for(@completed_story) do |f| %>
     <%= f.select :temp_rating, [['1', 1], ['2', 2], ['3', 3], ['4',4], ['5',5]] %>
     <%= f.submit 'Rate Story' %>
   <% end %>
-  <% flash[:success] = nil %>
 <% else %>
   <%= flash[:success] %>
 <% end %>
