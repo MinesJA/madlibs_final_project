@@ -38,6 +38,7 @@ gem 'awesome_print'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "paperclip", "~> 5.2.1"
+gem 'aws-sdk', '~> 2.3'
 
 
 group :development, :test do
