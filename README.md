@@ -8,5 +8,7 @@ The goal of this project was to create a web application using only Ruby on Rail
 In development, I used D3.js to create a bubble chart of user created categories, Filestack to host the user images, bcrypt for authentication, and EventfulAPI to pull in events from a user's hometown.
 
 [Play Here](https://www.google.com)
+
 Guest Login: Jonathan
+
 Guest Password: 12345
