@@ -53,9 +53,11 @@ class Template < ApplicationRecord
   end
 
   def self.random_template
+
     if self.count == 1
       self.first
     else
+      byebug
       num = Template.count - 1
       self.all[rand(0..num)]
     end
