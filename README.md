@@ -25,4 +25,3 @@ Sign up as a new user or use the guest login below:
 
 ## License
 This project is licensed under the MIT License
-
